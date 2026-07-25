@@ -97,7 +97,12 @@ with st.expander("What this is / how it works"):
 
 answer_query = _load_answer_fn()
 
-examples = ["punishment for theft", "someone attacked me with acid", "BNS 103", "is theft bailable?"]
+examples = [
+    "punishment for theft",
+    "someone attacked me with acid",
+    "BNS 103",
+    "what is criminal breach of trust",
+]
 st.write("Try: " + " · ".join(f"`{e}`" for e in examples))
 
 query = st.text_input("Ask about the new criminal codes:", placeholder="e.g. what is the punishment for theft?")
