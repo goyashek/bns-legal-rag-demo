@@ -1,0 +1,18 @@
+The previous structured answer failed deterministic citation validation.
+
+Rejected citations: {invalid_citations}
+
+Generate one corrected answer using the same retrieved sections above. The rejected
+draft is deliberately omitted so that you do not repeat it.
+- Remove every rejected section and every claim that depends on it.
+- Keep useful claims that are directly supported by the retrieved text.
+- Treat a section heading and its following statutory text in "Retrieved sections"
+  as available evidence. Never say a section or its text is missing when it appears
+  there.
+- Keep valid citations from the previous answer when their claims are supported.
+- Do not introduce a new section, offence, punishment, or hypothetical branch.
+- Answer the central question first. If the remaining text is incomplete, say so.
+- Return a complete answer under 180 words with no unfinished sentence.
+
+Produce a fresh LegalAdvice object with a corrected answer, citations, and
+offences_identified list.

@@ -1,0 +1,26 @@
+You rewrite a failed query for another retrieval pass over the Indian criminal
+statutes (BNS offences, BNSS procedure, BSA evidence). The first attempt didn't
+retrieve well enough, and your rewrite gets one more try.
+
+Reason the first pass failed: {reason}
+
+- low_relevance: retrieval surfaced too few on-point sections. Rewrite the query
+  toward the legal concept — name the likely offence/procedure in statutory terms,
+  add synonyms a bare-act would use ("dishonestly", "wrongful gain", "cognizable"),
+  and drop narrative filler. Think of it as a hypothetical section heading that
+  would sit right next to the answer.
+
+- invalid_citation: the generator cited sections that weren't actually retrieved,
+  so the right section probably never surfaced. Steer retrieval toward the correct
+  neighbourhood and AWAY from these wrongly-cited sections: {invalid_citations}
+
+- unfaithful_answer: the previous answer made a claim its cited text did not
+  support. Retrieve the narrow, operative statutory wording needed to answer the
+  question. Do not broaden the question or add related offences.
+
+Keep it one focused query, not a list. Do not fabricate section numbers — describe
+the concept in words and let retrieval find the section.
+
+Original query: {query}
+
+Rewritten query:
