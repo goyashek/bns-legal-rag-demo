@@ -1,4 +1,4 @@
-"""Agentic Legal RAG — public demo (Streamlit Community Cloud).
+"""BNS Legal RAG — public demo (Streamlit Community Cloud).
 
 Open + rate-limited. Query embeddings come from Cloudflare Workers AI
 (`@cf/baai/bge-large-en-v1.5`, the same weights that built the shipped index), so the
@@ -80,8 +80,8 @@ def _rate_limit_message() -> str | None:
     return None
 
 
-st.set_page_config(page_title="Agentic Legal RAG — BNS/BNSS/BSA", page_icon="⚖️")
-st.title("⚖️ Agentic Legal RAG — Indian Criminal Law")
+st.set_page_config(page_title="BNS Legal RAG — BNS/BNSS/BSA", page_icon="⚖️")
+st.title("⚖️ BNS Legal RAG — Indian Criminal Law")
 st.caption(
     "Answers from the 2023 codes (BNS / BNSS / BSA) with citations checked in code. "
     "**Statutory information, not legal advice.** Public demo — rate-limited."

@@ -1,4 +1,4 @@
-# Agentic Legal RAG — public demo (BNS / BNSS / BSA)
+# BNS Legal RAG — public demo (BNS / BNSS / BSA)
 
 Deployable demo of a retrieval-augmented QA system for India's 2023 criminal codes.
 Dense retrieval over the BNS/BNSS/BSA corpus, a cited answer, and a **citation check
