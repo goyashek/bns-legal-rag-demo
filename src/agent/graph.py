@@ -44,13 +44,10 @@ RETRIEVE_K = 20
 CONTEXT_K = 12
 HINT_K = 8
 MAX_CONTEXT_K = 24
-# The real Qdrant collection is "legal" (see src/retrieval/index.py + the on-disk
-# data/processed/qdrant/collection/legal). NOTE: .env.example still says
-# QDRANT_COLLECTION=bns_sections — that default is stale; the index build names it
-# "legal". Kept here so the graph doesn't silently query an empty collection.
+# Matches the collection created by src/retrieval/index.py.
 QDRANT_COLLECTION = "legal"
 
-# ponytail: these cheap hints cover the audited doctrine gaps; replace them with a
+# These cheap hints cover the audited doctrine gaps; replace them with a
 # learned router only if a broader evaluation shows the small table has hit its ceiling.
 _LEGAL_HINT_PATTERNS = (
     (re.compile(r"\b(plan(?:ned|ning)?|agree(?:d|ment)?)\b", re.I), "criminal conspiracy"),

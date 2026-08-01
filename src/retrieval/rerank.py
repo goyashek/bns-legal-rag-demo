@@ -1,7 +1,7 @@
 """Cross-encoder reranker, on by default.
 
 Reranking is pretty standard now, so bge-reranker-base is in from the start. I
-ablate it in notebooks/02_retrieval_ablation.ipynb to see how many points it
+ablate it with `src.eval.retrieval_baseline` to see how many points it
 actually buys. It cuts the ~20 RRF-fused candidates down to the ~8 the agent
 reasons over.
 """

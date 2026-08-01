@@ -19,17 +19,17 @@ This copy is packaged to run on a 1 GB host, so it makes two substitutions:
 - **Prebuilt index committed** under `data/processed/` (16 MB), since the host has no
   source PDFs and no ingest step. Ingest, evaluation, and the API are not included.
 
-The hosted embeddings are not bit-identical to the local model — query vectors agree at
-0.963–0.975 cosine, which reorders near-ties. Scored on the same 50 labelled scenarios
-(dense, no reranker) with the project's own harness:
+The hosted embeddings are not bit-identical to the local model. Query vectors agree at
+0.963 to 0.975 cosine, which reorders near-ties. Scored on the same 50 BNS development
+scenarios (dense, no reranker) with the project's own harness:
 
 | query embedder | P@5 | Recall@5 | MRR |
 |---|---|---|---|
 | local `bge-large-en-v1.5` | 0.200 | 0.750 | 0.706 |
 | Cloudflare `bge-large-en-v1.5` | 0.208 | 0.777 | 0.673 |
 
-Retrieval is equivalent for demo purposes: recall is marginally higher, MRR marginally
-lower. The headline evaluation numbers in the main repo were produced with the local
+On this development set, recall is marginally higher and MRR is marginally lower. The
+headline evaluation numbers in the main repo were produced with the local
 embedder and are not relabelled here.
 
 The IPC→BNS bridge is inactive in this copy: it parses a government comparison PDF that
@@ -52,10 +52,8 @@ LLM_HARD_MODEL = "deepseek-v4-flash"
 LLM_DISABLE_THINKING = "true"
 ```
 
-Cloudflare's free allowance (10,000 neurons/day) covers on the order of 25,000 query
-embeddings per day. DeepSeek generation is metered, so `app.py` enforces a per-session
-rate limit and a global daily cap — and you should also set a hard spending limit on
-the DeepSeek account.
+DeepSeek generation is metered, so `app.py` enforces a per-session rate limit and a
+global daily cap. You should also set a hard spending limit on the DeepSeek account.
 
 ## Run locally
 
